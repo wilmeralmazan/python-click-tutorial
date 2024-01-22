@@ -5,7 +5,11 @@ from setuptools import setup
 setup(
     name='cli_tools',  # The name of your package
     version='1.0',     # The version of your package
-    py_modules=['greeter', 'calculator', 'authenticate'],  # List of Python modules to include in the package
+    py_modules=['greeter',
+                'calculator',
+                'authenticate',
+                'authenticate2'
+                ],  # List of Python modules to include in the package
 
     # Specify any dependencies your package requires.
     install_requires=[
@@ -18,7 +22,8 @@ setup(
             'greetings=greeter:greet',
             'add=calculator:add',
             'subtract=calculator:subtract',
-            'authenticate=authenticate:auth'
+            'authenticate=authenticate:auth',
+            'authenticate2=authenticate2:auth'
         ]
         
     }
