@@ -8,7 +8,8 @@ setup(
     py_modules=['greeter',
                 'calculator',
                 'authenticate',
-                'authenticate2'
+                'authenticate2',
+                'fileutils'
                 ],  # List of Python modules to include in the package
 
     # Specify any dependencies your package requires.
@@ -23,7 +24,8 @@ setup(
             'add=calculator:add',
             'subtract=calculator:subtract',
             'authenticate=authenticate:auth',
-            'authenticate2=authenticate2:auth'
+            'authenticate2=authenticate2:auth',
+            'note=fileutils:note'
         ]
         
     }
