@@ -14,7 +14,11 @@ setup(
 
     # Define the entry point for the command-line script.
     entry_points={
-        'console_scripts': 'greetings=greeter:greet'
-        # This means that the 'greetings' command will be mapped to the 'greet' function in the 'greeter' module
+        'console_scripts': [
+            'greetings=greeter:greet',
+            'add=calculator:add',
+            'subtract=calculator:subtract'
+        ]
+        
     }
 )

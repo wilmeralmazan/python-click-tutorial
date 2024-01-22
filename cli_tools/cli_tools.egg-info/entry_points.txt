@@ -1,3 +1,5 @@
 [console_scripts]
-greetings=greeter:greet
+add = calculator:add
+greetings = greeter:greet
+subtract = calculator:subtract
 
