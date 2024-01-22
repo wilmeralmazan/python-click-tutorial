@@ -15,3 +15,14 @@ def note(fo):
             fo.write(f"{value}\n")
     except click.Abort:
         click.echo(f"\nOutput written to file {fo.name}")
+
+
+@click.command
+@click.argument('inputs', type=click.File('r'), nargs=-1)
+@click.argument('output', type=click.File('w'))
+def concat(inputs: typing.Collection[typing.IO], output: typing.IO):
+    """Concatenates the contents of one or more files into an output file."""
+    for f in inputs:
+        for line in f:
+            output.write(line)
+        click.echo(f"{f.name} written to {output.name}")

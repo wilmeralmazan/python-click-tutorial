@@ -25,7 +25,8 @@ setup(
             'subtract=calculator:subtract',
             'authenticate=authenticate:auth',
             'authenticate2=authenticate2:auth',
-            'note=fileutils:note'
+            'note=fileutils:note',
+            'concat=fileutils:concat'
         ]
         
     }
