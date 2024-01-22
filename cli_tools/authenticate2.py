@@ -9,4 +9,8 @@ def auth():
     username = click.prompt("Username:")
     password = click.prompt("password", hide_input=True, confirmation_prompt=True)
 
-    click.echo(f"Logging as {username}")
+    if click.confirm("Are you an Admin?"):
+        admin_id = click.prompt("Admin ID: ", type=int, prompt_suffix='>')
+        click.echo(f"Logging in admin {username} (ID {admin_id})")
+    else:
+        click.echo(f"Logging as {username}")
