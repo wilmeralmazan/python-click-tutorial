@@ -19,5 +19,8 @@ def greet(name, lang, say_it):
 
     greetings = "Hello" if lang == 'en' else "Hola"
 
-    for _ in range(say_it):
-        click.echo(f"{greetings} {name}")
+    colors = ['blue', 'green', 'red', 'yellow']
+
+    for i in range(say_it):
+        color_idx = (i * 31 + 17) % len(colors)
+        click.secho(f"{greetings} {name}",fg=colors[color_idx])
