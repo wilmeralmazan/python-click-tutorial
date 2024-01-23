@@ -3,6 +3,7 @@ add = calculator:add
 authenticate = authenticate:auth
 authenticate2 = authenticate2:auth
 concat = fileutils:concat
+download = fileutils:download
 greetings = greeter:greet
 note = fileutils:note
 notes = notes:main

@@ -14,7 +14,8 @@ setup(
 
     # Specify any dependencies your package requires.
     install_requires=[
-        'Click'  # The 'Click' library is a dependency
+        'Click',  # The 'Click' library is a dependency
+        'requests'
     ],
 
     # Define the entry point for the command-line script.
@@ -27,7 +28,8 @@ setup(
             'authenticate2=authenticate2:auth',
             'note=fileutils:note',
             'concat=fileutils:concat',
-            'notes=notes:main'
+            'notes=notes:main',
+            'download=fileutils:download'
         ]
         
     }

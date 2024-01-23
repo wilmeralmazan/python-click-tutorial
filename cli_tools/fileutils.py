@@ -2,8 +2,9 @@
 
 import click
 import typing
+import requests
 
-@click.command
+@click.command()
 @click.argument('fo', type=click.File('a'))
 def note(fo):
     """Write notes input to given file."""
@@ -17,7 +18,7 @@ def note(fo):
         click.echo(f"\nOutput written to file {fo.name}")
 
 
-@click.command
+@click.command()
 @click.argument('inputs', type=click.File('r'), nargs=-1)
 @click.argument('output', type=click.File('w'))
 def concat(inputs: typing.Collection[typing.IO], output: typing.IO):
@@ -26,3 +27,22 @@ def concat(inputs: typing.Collection[typing.IO], output: typing.IO):
         for line in f:
             output.write(line)
         click.echo(f"{f.name} written to {output.name}")
+
+
+@click.command()
+@click.argument('inputs', nargs=-1)
+def download(inputs):
+    """Downloads web resources from (url, filename) input pairs
+    
+    Example:
+      download http://xyz.com/p1.txt,page1.txt http://xyz.com/p2.txt,page2.txt
+
+      This fetches web resources by URL and saves them locally to filename    
+    """
+
+    with click.progressbar(inputs)as bar:
+        for item in bar:
+            url, filename = item.split(',')
+            response = requests.get(url)
+            with open(filename, 'w') as fo:
+                fo.write(response.text)
