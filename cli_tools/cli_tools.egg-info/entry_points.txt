@@ -5,5 +5,6 @@ authenticate2 = authenticate2:auth
 concat = fileutils:concat
 greetings = greeter:greet
 note = fileutils:note
+notes = notes:main
 subtract = calculator:subtract
 

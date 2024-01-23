@@ -26,7 +26,8 @@ setup(
             'authenticate=authenticate:auth',
             'authenticate2=authenticate2:auth',
             'note=fileutils:note',
-            'concat=fileutils:concat'
+            'concat=fileutils:concat',
+            'notes=notes:main'
         ]
         
     }
