@@ -1,0 +1,3 @@
+I am file 1 contents
+I am file 2 contents
+I am file 3 contents

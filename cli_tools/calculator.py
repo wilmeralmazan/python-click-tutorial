@@ -12,8 +12,9 @@ def add(xs, verbose):
     """Adds numbers."""
 
     if verbose:
-        click.echo(f" {' + '.join(str(x) for x in xs)} = { sum(xs)}")
-    click.echo(sum(xs))
+        click.echo(f"{' + '.join(str(x) for x in xs)} = { sum(xs)}")
+    else:
+        click.echo(sum(xs))
 
 @click.command()
 @click.argument('xs', type=int, nargs=-1)
@@ -29,6 +30,6 @@ def subtract(xs,verbose):
         results -=x
     
     if verbose:
-        click.echo(f" {' - '.join(str(x) for x in xs)} = { results }")
+        click.echo(f" {'-'.join(str(x) for x in xs)} = { results }")
     
     click.echo(results)
